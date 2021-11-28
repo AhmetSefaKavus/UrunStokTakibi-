@@ -1,0 +1,51 @@
+﻿@model urunStokTakibi.Models.urun
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<h1>Ürünü Silmek İstediğinize Emin Misiniz ?</h1>
+<br />
+
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ürün Kodu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Ürün Adı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            Ürün Rengi
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.urunRengi)
+        </dd>
+        <dt class="col-sm-2">
+            Ürün Liste Fiyatı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ListeFiyatı)
+        </dd>
+        <dt class="col-sm-2">
+            Stok Durumu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stokAdeti)
+        </dd>
+    </dl>
+
+    <form asp-action="Sil">
+        <input type="submit" value="Ürünü Sil" class="btn btn-danger" /> | <a asp-action="Listele"><input type="button" value="Ürün Listesine Geri Dön" class="btn btn-primary" /></a>
+    </form>
+</div>

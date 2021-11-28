@@ -1,0 +1,51 @@
+﻿@model urunStokTakibi.Models.urun
+
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<h1>Ürün Detayı</h1>
+<br />
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ürün Kodu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Ürün Adı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            Ürün Rengi
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.urunRengi)
+        </dd>
+        <dt class="col-sm-2">
+            Liste Fiyatı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ListeFiyatı)
+        </dd>
+        <dt class="col-sm-2">
+            Stok Adeti
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stokAdeti)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Güncelle", "Guncelle", new { id = Model.Id })
+    &nbsp&nbsp <a asp-action="Listele"><input type="button" value="Ürün Listesine Geri Dön" class="btn btn-primary" /></a>
+</div>

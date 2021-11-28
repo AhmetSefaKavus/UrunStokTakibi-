@@ -1,0 +1,40 @@
+﻿@model IEnumerable<urunStokTakibi.Models.urun>
+
+@{
+    ViewData["Title"] = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="tabloListe">
+    <table>
+        <tr class="table-basliklar">
+
+            <td><b>Ürün Kodu</b></td>
+            <td><b>Ürün Adı</b></td>
+            <td><b>Ürün Rengi</b></td>
+            <td><b>Ürün Liste Fiyatı</b></td>
+            <td><b>Ürün İskonto Oranı</b></td>
+            <td></td>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr class="table-basliklar">
+                <td width="200px"> @Html.DisplayFor(modelItem => item.Id)</td>
+                <td width="450px">@Html.DisplayFor(modelItem => item.Ad)</td>
+                <td width="230px">@Html.DisplayFor(modelItem => item.ListeFiyatı)</td>
+                <td width="200px">@Html.DisplayFor(modelItem => item.urunRengi)</td>
+                <td width="200px">@Html.DisplayFor(modelItem => item.stokAdeti)</td>
+                <td width="300px">
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id = item.Id }) |
+                    @Html.ActionLink("Detay", "Detay", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Sil", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    <br />
+</div>
